@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Hayyina Jayyida! 💚</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --spotify-green: #1DB954;
+            --spotify-black: #121212;
+            --spotify-dark-grey: #181818;
+            --spotify-light-grey: #b3b3b3;
+            --romantic-pink: #ff4d6d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, #2a0813 0%, var(--spotify-black) 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* Spotify Room Container */
+        .spotify-container {
+            background-color: var(--spotify-dark-grey);
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Header Room */
+        .room-header {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--spotify-light-grey);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Album/Vinyl Art Interaction */
+        .album-wrapper {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 30px auto;
+        }
+
+        .album-art {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; /* Dibuat bulat seperti piringan hitam */
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            border: 4px solid #282828;
+            transition: transform 0.5s ease;
+            animation: rotateVinyl 10s linear infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes rotateVinyl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Heart Badges Pop Up */
+        .heart-badge {
+            position: absolute;
+            background: var(--romantic-pink);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+        }
+
+        /* Track Info */
+        .track-info {
+            text-align: left;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .track-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .track-artist {
+            font-size: 14px;
+            color: var(--spotify-light-grey);
+        }
+
+        .like-btn {
+            color: var(--romantic-pink);
+            font-size: 22px;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: #4f4f4f;
+            border-radius: 2px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: var(--spotify-green);
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
+
+        .time-stamps {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--spotify-light-grey);
+            margin-bottom: 25px;
+        }
+
+        /* Player Controls */
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .control-btn:hover {
+            color: var(--spotify-green);
+        }
+
+        .play-btn {
+            font-size: 45px;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.08);
+            color: #fff;
+        }
+
+        /* Romantic Lyrics Section (The Surprise) */
+        .lyrics-box {
+            background-color: #282828;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: left;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .lyrics-header {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--spotify-green);
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .lyrics-content {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        /* Custom Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--romantic-pink);
+            border-radius: 50%;
+            animation: fall linear forwards;
+            opacity: 0.8;
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="spotify-container">
+        <div class="room-header">🎵 HAYYINA'S BIRTHDAY ROOM</div>
+
+        <!-- Album Art / Foto Pacar -->
+        <div class="album-wrapper">
+            <!-- Ganti src dengan foto Hayyina, atau biarkan gambar aesthetic ini -->
+            <img src="foto.jpg.jpeg" alt="Hayyina Jayyida" class="album-art" id="albumArt">
+            <div class="heart-badge" style="top: -10px; right: -10px;">HBD My Girl! 🎂</div>
+            <div class="heart-badge" style="bottom: 10px; left: -20px; background: var(--spotify-green);">Level 20++ 🎉</div>
+        </div>
+
+        <!-- Judul Lagu & Notifikasi Love -->
+        <div class="track-info">
+            <div>
+                <div class="track-title">Stuck with U</div>
+                <div class="track-artist">Justin Bieber & Ariana Grande (Custom for Hayyina)</div>
+            </div>
+            <div class="like-btn" id="likeBtn">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+
+        <!-- Audio Player Tersembunyi -->
+        <!-- Catatan: Ganti URL di src dengan link lagu .mp3 jika punya, atau gunakan preview ini -->
+        <audio id="myAudio" src="stuck-with-you.mp3"></audio>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="time-stamps">
+            <span id="currentTime">0:00</span>
+            <span id="duration">3:48</span>
+        </div>
+
+        <!-- Musik Kontrol -->
+        <div class="controls">
+            <button class="control-btn" id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+            <button class="control-btn play-btn" id="playBtn"><i class="fa-solid fa-circle-play"></i></button>
+            <button class="control-btn" id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
+
+        <!-- Bagian Surat Romantis Bergerak (Lyrics Style) -->
+        <div class="lyrics-box">
+            <div class="lyrics-header">Lirik Paling Spesial</div>
+            <div class="lyrics-content" id="lyricsText">
+                Klik tombol "Play" di atas untuk memulai ucapan spesial buat kamu... ✨
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const currentTimeEl = document.getElementById('currentTime');
+        const lyricsText = document.getElementById('lyricsText');
+        const albumArt = document.getElementById('albumArt');
+        const likeBtn = document.getElementById('likeBtn');
+
+        // Kumpulan kalimat romantis yang akan berganti seiring berjalannya lagu
+        const romanticQuotes = [
+            "sSelamat ulang tahun, Hayyina Jayyida tercintahhh... ❤️",
+            "Sama seperti lagu ini, 'I'm stuck with you', dan aku bersyukur banget untuk itu.",
+            "Di dunia yang penuh ketidakpastian ini, bersamamu adalah satu-satunya hal yang paling pasti.",
+            "Terima kasih sudah lahir ke dunia dan membawa banyak kebahagiaan di hidup aku. ✨",
+            "Aku berharap di usia barumu ini, senyum manismu itu gaakan pernah pudar.",
+            "Apapun yang terjadi nanti, tetep sama aku terus ya? I love you so much, Princess! 👑❤️",
+            "Semoga semua mimpi-mimpimu bisa terwujud secepatnya. Aku pasti bgt support kamu!"
+        ];
+
+        let quoteIndex = 0;
+        let lyricInterval;
+
+        // Fungsi Play / Pause Musik
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
+                albumArt.style.animationPlayState = 'running';
+                startLyrics();
+                createConfetti();
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
+                albumArt.style.animationPlayState = 'paused';
+                clearInterval(lyricInterval);
+            }
+        }
+
+        playBtn.addEventListener('click', togglePlay);
+
+        // Simulasi jalannya lirik lagu romantis
+        function startLyrics() {
+            if(quoteIndex === 0) {
+                lyricsText.innerText = romanticQuotes[0];
+                quoteIndex++;
+            }
+            
+            lyricInterval = setInterval(() => {
+                lyricsText.style.opacity = 0;
+                setTimeout(() => {
+                    lyricsText.innerText = romanticQuotes[quoteIndex];
+                    lyricsText.style.opacity = 1;
+                    quoteIndex = (quoteIndex + 1) % romanticQuotes.length;
+                }, 300);
+            }, 5000); // Teks berganti setiap 5 detik
+        }
+
+        // Update Progress Bar & Waktu
+        audio.addEventListener('timeupdate', () => {
+            const percentage = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${percentage}%`;
+            
+            // Format menit dan detik
+            let mins = Math.floor(audio.currentTime / 60);
+            let secs = Math.floor(audio.currentTime % 60);
+            if (secs < 10) secs = '0' + secs;
+            currentTimeEl.innerText = `${mins}:${secs}`;
+        });
+
+        // Efek Klik Tombol Love (Playfull)
+        likeBtn.addEventListener('click', () => {
+            alert("Hayyina menyukai web ini! Hehe. I love you more! 💖");
+            createConfetti();
+        });
+
+        // Tombol Next & Prev untuk ganti kalimat manual secara playful
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            quoteIndex = (quoteIndex + 1) % romanticQuotes.length;
+            lyricsText.innerText = romanticQuotes[quoteIndex];
+            createConfetti();
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            quoteIndex = (quoteIndex - 1 + romanticQuotes.length) % romanticQuotes.length;
+            lyricsText.innerText = romanticQuotes[quoteIndex];
+        });
+
+        // Efek Hujan Hati / Confetti Romantis saat di-play
+        function createConfetti() {
+            for (let i = 0; i < 15; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.innerText = ['❤️', '💖', '✨', '🌸'][Math.floor(Math.random() * 4)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 2 + 2 + 's';
+                confetti.style.fontSize = Math.random() * 15 + 15 + 'px';
+                confetti.style.backgroundColor = 'transparent';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 4000);
+            }
+        }
+    </script>
+</body>
+</html>
